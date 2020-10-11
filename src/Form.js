@@ -19,7 +19,7 @@ class Form extends Component {
     }
 
     submitForm = () => {
-        this.props.addIncome(this.state);
+        this.props.addItem(this.state);
         this.setState(this.initialState);
         this.props.toggleForm();
     }

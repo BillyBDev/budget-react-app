@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import Income from './Income';
+import List from './List';
 
 
 
@@ -12,7 +12,7 @@ class Table extends Component {
         return (
             <div class="row">
                 <div class="column">
-                    <Income adjustTotal={this.props.adjustTotal}/>
+                    <List adjustTotal={this.props.adjustTotal} flip={false}/>
                 </div>
                 <div class="column">
 

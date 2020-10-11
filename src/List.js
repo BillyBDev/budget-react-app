@@ -12,8 +12,8 @@ const AddItemBtn = (props) => {
     }
 }
 
-const IncomesList = (props) => {
-    const list = props.incomes.map((item) => {
+const ItemsList = (props) => {
+    const list = props.items.map((item) => {
         return (
             <li className="incomeListItem">{item.desc} - {item.amount}</li>
         )
@@ -22,10 +22,11 @@ const IncomesList = (props) => {
     return <ul>{list}</ul>
 }
 
-class Income extends Component {
+class List extends Component {
     state = {
+        flip: this.props.flip,
         showForm: false,
-        incomes: []
+        items: []
     }
 
     toggleForm = () => {
@@ -34,22 +35,22 @@ class Income extends Component {
         })
     }
 
-    addIncome = (obj) => {
-        let newInc = obj;
+    addItem = (obj) => {
+        let newItem = obj;
         this.props.adjustTotal(obj.amount);
         this.setState({
-            incomes: [...this.state.incomes, newInc]
+            items: [...this.state.items, newItem]
         });
     }
     
     render(){
         return (
             <div>
-                <IncomesList incomes={this.state.incomes} />
+                <ItemsList items={this.state.items} />
                 <Form 
                     showForm={this.state.showForm} 
                     toggleForm={this.toggleForm}
-                    addIncome={this.addIncome}
+                    addItem={this.addItem}
                     />
                 <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
             </div>
@@ -57,4 +58,4 @@ class Income extends Component {
     }
 }
 
-export default Income;
+export default List;
