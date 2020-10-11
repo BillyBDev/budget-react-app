@@ -21,7 +21,7 @@ code {
 
 hr {
   width: 60%;
-  color: magenta;
+  color:yellow;
 }
 
 .row {
@@ -35,4 +35,10 @@ hr {
 
 .hiddenForm {
   width: 60%;
+}
+
+.delet {
+  display: inline;
+  margin-left: 20px;
+  size: 0.5em;
 }
