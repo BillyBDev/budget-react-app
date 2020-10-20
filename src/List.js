@@ -18,20 +18,21 @@ const ItemsList = (props) => {
             <li className="incomeListItem">
                 {item.desc} - {item.amount}  
                 <div className="delet">
-                    <button className="ui mini circular icon button inverted red" onClick={() => props.removeItem(index, item.amount)}>
+                    <button
+                        className="ui mini circular icon button inverted red" 
+                        onClick={() => props.removeItem(index, item.amount)}
+                    >
                         <i className="icon minus" />
                     </button>
                 </div>
             </li>
         )
     })
-
     return <ul>{list}</ul>
 }
 
 class List extends Component {
     state = {
-        flip: this.props.flip,
         showForm: false,
         items: []
     }
@@ -44,7 +45,11 @@ class List extends Component {
 
     addItem = (obj) => {
         let newItem = obj;
-        this.props.adjustTotal(obj.amount);
+        let amt = obj.amount;
+        if (this.props.flip) {
+            amt = amt * -1;
+        }
+        this.props.adjustTotal(amt);
         this.setState({
             items: [...this.state.items, newItem]
         });
@@ -52,8 +57,11 @@ class List extends Component {
 
     removeItem = (index, amount) => {
         const items = this.state.items;
-
-        this.props.adjustTotal(amount * -1);
+        let amt = amount;
+        if (this.props.flip) {
+            amt = amt * -1;
+        }
+        this.props.adjustTotal(amt * -1);
         this.setState({items: items.filter((item, i) => {
             return i !== index
         })})
@@ -67,7 +75,7 @@ class List extends Component {
                     showForm={this.state.showForm} 
                     toggleForm={this.toggleForm}
                     addItem={this.addItem}
-                    />
+                />
                 <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
             </div>
         )

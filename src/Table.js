@@ -15,7 +15,7 @@ class Table extends Component {
                     <List adjustTotal={this.props.adjustTotal} flip={false}/>
                 </div>
                 <div class="column">
-
+                <List adjustTotal={this.props.adjustTotal} flip={true}/>
                 </div>
             </div>
         )

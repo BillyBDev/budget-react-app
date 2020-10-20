@@ -25,3 +25,18 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+state = {
+  2020: [
+    {
+      name: "oct",
+      incomes: [],
+      expenses: []
+    }
+    ...
+  ],
+  2021: [],
+  ...
+}
+*/
