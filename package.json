@@ -1,7 +1,7 @@
 {
   "name": "budget-v1",
   "version": "0.1.0",
-  "homepage": "https://billybdev.github.io/budgetin30sec/",
+  "homepage": "https://billybdev.github.io/budget-react-app-v1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -16,12 +16,12 @@
     "semantic-ui-react": "^2.0.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
