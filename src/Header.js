@@ -5,15 +5,27 @@ function pocketAmt(num){
     return ans.toFixed(2)
 }
 
+function DailyAmount(props){
+    if (props.total > 0){
+        return (
+            <div>
+                <h4>Daily pocket balance:</h4>
+                <p>{pocketAmt(props.total)}</p>
+            </div>
+        )
+    } else {
+        return null
+    }
+}
+
 const Header = (props) => {
     return (
         <div class="header">
             <h2>Net:</h2>
             <h3>{props.total.toFixed(2)}</h3>
             <br />
-            <h4>Here is your daily-pocket-balance:</h4>
-            <p>{pocketAmt(props.total)}</p>
-            <hr />
+            <DailyAmount total={props.total}/>
+            <hr className="header-hr"/>
         </div>
     )
 }
