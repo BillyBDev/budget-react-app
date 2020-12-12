@@ -5,8 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: lime;
-  background-color: black;
+  color: black;
+  background-color: white;
+}
+
+.container {
+  width: 55%;
+  max-width: 600px;
+  height: 70vh;
+  margin: auto;
+  margin-top: 10vh;
+  border: 2px solid black;
 }
 
 code {
@@ -15,9 +24,21 @@ code {
 }
 
 .header {
-  margin: auto;
-  text-align: center;
-  color: magenta;
+  margin-top: 3em;
+  text-align: right;
+  margin-right: 13%;
+  margin-bottom: 2em;
+}
+
+#net-label {
+  font-size: 1.6em;
+  
+}
+
+#net-amt {
+  font-size: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .header-hr {
