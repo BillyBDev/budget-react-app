@@ -17,6 +17,7 @@ code {
 .header {
   margin: auto;
   text-align: center;
+  color: magenta;
 }
 
 .header-hr {
