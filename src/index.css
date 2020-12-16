@@ -9,6 +9,8 @@ body {
   background-color: white;
 }
 
+
+
 .container {
   width: 55%;
   max-width: 600px;
@@ -32,13 +34,22 @@ code {
 
 #net-label {
   font-size: 1.6em;
-  
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 #net-amt {
-  font-size: 2em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+#day-label {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  /* margin-right: 13.6%; */
+}
+
+#day-amt {
+  font-size: 1.3em;
 }
 
 .header-hr {

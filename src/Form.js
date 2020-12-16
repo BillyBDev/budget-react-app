@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { Button } from 'semantic-ui-react'
+import IconButton from '@material-ui/core/IconButton';
+import MinusIcon from '@material-ui/icons/IndeterminateCheckBoxOutlined';
 
 class Form extends Component {
 
@@ -51,7 +53,11 @@ class Form extends Component {
                                     onClick={this.submitForm}>Add</button>
                         </div>
                         <div>
-                            <Button circular icon='minus' onClick={this.props.toggleForm}/>
+                            <IconButton aria-label="minus" onClick={this.props.toggleForm}>
+                                <MinusIcon />
+                            </IconButton>
+                            {/*old semantic button*/}
+                            {/* <Button circular icon='minus' onClick={this.props.toggleForm}/> */}
                         </div>
                         
                     </div>
