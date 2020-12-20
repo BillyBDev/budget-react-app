@@ -10,18 +10,18 @@ class Table extends Component {
 
     render(){
         return (
-            <div className="row">
-                <div className="column">
-                    <h3 className="col-head">Income</h3>
-                    <hr className="col-hr"/>
+            <>
+                <div className="row">              
+                    {/* <div className="row-header">Incomes</div>
+                    <hr className="row-hr"/> */}
                     <List adjustTotal={this.props.adjustTotal} flip={false}/>
                 </div>
-                <div className="column">
-                    <h3 className="col-head red">Expenses</h3>
-                    <hr className="col-hr"/>
+                <div className="row">
+                    {/* <div className="row-header">Expenses</div>
+                    <hr className="row-hr"/> */}
                     <List adjustTotal={this.props.adjustTotal} flip={true}/>
                 </div>
-            </div>
+            </>
         )
     }
 }

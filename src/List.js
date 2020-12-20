@@ -10,9 +10,12 @@ import AddIcon from '@material-ui/icons/AddBoxOutlined';
 const AddItemBtn = (props) => {
     if (props.showForm === false) {
         return (
-            <IconButton aria-label="add" onClick={props.toggleForm}>
-                <AddIcon />
-            </IconButton>
+            <span className="add-item">
+                <IconButton aria-label="add" onClick={props.toggleForm}>
+                    <AddIcon />
+                </IconButton>
+            </span>
+
             //old semantic-ui button
             // <Button circular icon='plus' onClick={props.toggleForm}/>
         )
@@ -24,8 +27,7 @@ const AddItemBtn = (props) => {
 const ItemsList = (props) => {
     const list = props.items.map((item, index) => {
         return (
-            <li className="incomeListItem">
-                {item.desc} - {item.amount}  
+            <li className="income-list-item"> 
                 <div className="delet">
                     <button
                         className="ui mini circular icon button inverted red" 
@@ -33,6 +35,7 @@ const ItemsList = (props) => {
                     >
                         <i className="icon minus" />
                     </button>
+                    {item.desc} - {item.amount} 
                 </div>
             </li>
         )
@@ -77,15 +80,26 @@ class List extends Component {
     }
     
     render(){
+        let listHeader;
+        if (this.props.flip === false){
+            listHeader = "Incomes";
+        } else {
+            listHeader = "Expenses";
+        }
         return (
             <div>
+                <div className="row-header">
+                    {listHeader}
+                    <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
+                </div>
+                <hr className="row-hr"/>
                 <ItemsList items={this.state.items} removeItem={this.removeItem} />
                 <Form 
                     showForm={this.state.showForm} 
                     toggleForm={this.toggleForm}
                     addItem={this.addItem}
                 />
-                <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
+                {/* <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/> */}
             </div>
         )
     }

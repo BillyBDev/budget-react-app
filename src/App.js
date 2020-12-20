@@ -17,6 +17,7 @@ class App extends Component {
     return (
       <div class="container">
         <Header total={this.state.total}/>
+        <hr id="header-hr"></hr>
         <Table adjustTotal={this.adjustTotal}/>
       </div>
 

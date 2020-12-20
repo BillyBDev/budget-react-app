@@ -52,27 +52,36 @@ code {
   font-size: 1.3em;
 }
 
-.header-hr {
-  width: 60%;
-  color:yellow;
-}
-
-.col-hr {
-  color: cyan;
-  width: 10em;
-}
-
-.col-head {
-  text-align: center;
+#header-hr {
+  width: 80%;
+  color:cyan;
 }
 
 .row {
-  display: flex;
-  justify-content: space-evenly;
+  margin-top: 5vh;
 }
 
-.column {
-  flex-basis: 20%
+.row-header {
+  margin-left: 19%;
+  font-size: 1.2em;
+}
+
+.row-hr {
+  width: 170px;
+  margin-left: 15%;
+}
+
+.add-item {
+  margin-left: 7px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.income-list-item {
+  margin-right: 13%;
+  text-align: right;
 }
 
 .hiddenForm {
