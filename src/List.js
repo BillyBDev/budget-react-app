@@ -5,6 +5,7 @@ import Button from '@material-ui/core/button';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/AddBoxOutlined';
+import MinusIcon from '@material-ui/icons/RemoveCircleOutline';
 
 
 const AddItemBtn = (props) => {
@@ -15,9 +16,6 @@ const AddItemBtn = (props) => {
                     <AddIcon />
                 </IconButton>
             </span>
-
-            //old semantic-ui button
-            // <Button circular icon='plus' onClick={props.toggleForm}/>
         )
     } else {
         return null;
@@ -28,13 +26,10 @@ const ItemsList = (props) => {
     const list = props.items.map((item, index) => {
         return (
             <li className="income-list-item"> 
-                <div className="delet">
-                    <button
-                        className="ui mini circular icon button inverted red" 
-                        onClick={() => props.removeItem(index, item.amount)}
-                    >
-                        <i className="icon minus" />
-                    </button>
+                <div className="delete">
+                    <IconButton aria-label="delete" onClick={() => {props.removeItem(index, item.amount)}}>
+                        <MinusIcon />
+                    </IconButton>
                     {item.desc} - {item.amount} 
                 </div>
             </li>
@@ -91,15 +86,16 @@ class List extends Component {
                 <div className="row-header">
                     {listHeader}
                     <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
-                </div>
-                <hr className="row-hr"/>
-                <ItemsList items={this.state.items} removeItem={this.removeItem} />
-                <Form 
+                    <hr className="row-hr"/>
+                    <Form 
                     showForm={this.state.showForm} 
                     toggleForm={this.toggleForm}
                     addItem={this.addItem}
-                />
-                {/* <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/> */}
+                    />
+                </div>
+
+                <ItemsList items={this.state.items} removeItem={this.removeItem} />
+                
             </div>
         )
     }

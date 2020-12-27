@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Button } from 'semantic-ui-react'
+import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
-import MinusIcon from '@material-ui/icons/IndeterminateCheckBoxOutlined';
+import AddIcon from '@material-ui/icons/AddBoxOutlined';
+import RetractIcon from '@material-ui/icons/ExpandLess';
 
 class Form extends Component {
 
@@ -19,6 +20,11 @@ class Form extends Component {
         })
     }
 
+    undoForm = () => {
+        this.props.toggleForm();
+        this.setState(this.initialState);
+    }
+
     submitForm = () => {
         this.props.addItem(this.state);
         this.setState(this.initialState);
@@ -26,40 +32,42 @@ class Form extends Component {
     }
 
     render(){
-
         const {desc, amount} = this.state;
 
         if (this.props.showForm) {
             return (
                 <div>
                     <div className="hiddenForm">
-                        <div className="ui mini fluid input">
-                            <input 
-                                type="text" 
-                                placeholder="Description"
-                                name="desc"
-                                value={desc}
-                                onChange={this.handleChange}
+                        <form>
+                            <div>
+                                <TextField
+                                    type="text"                                 
+                                    label="Description"
+                                    // variant="outlined"
+                                    name="desc"
+                                    value={desc}
+                                    onChange={this.handleChange}
                                 />
-                        </div>
-                        <br />
-                        <div className="ui mini fluid action input">
-                            <input  type="text" 
-                                    placeholder="Amount"
+                            </div>
+                            <br />
+                            <div>
+                                <TextField  
+                                    type="text" 
+                                    label="Amount"
                                     name="amount"
                                     value={amount}
-                                    onChange={this.handleChange} />
-                            <button className="ui button"
-                                    onClick={this.submitForm}>Add</button>
-                        </div>
-                        <div>
-                            <IconButton aria-label="minus" onClick={this.props.toggleForm}>
-                                <MinusIcon />
-                            </IconButton>
-                            {/*old semantic button*/}
-                            {/* <Button circular icon='minus' onClick={this.props.toggleForm}/> */}
-                        </div>
-                        
+                                    onChange={this.handleChange} 
+                                />
+                            </div>
+                            <div>
+                                <IconButton aria-label="submit" onClick={this.submitForm}>
+                                    <AddIcon />
+                                </IconButton>
+                                <IconButton aria-label="minus" onClick={this.undoForm}>
+                                    <RetractIcon />
+                                </IconButton>
+                            </div>
+                        </form>    
                     </div>
                 </div>
             )

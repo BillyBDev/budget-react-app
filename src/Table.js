@@ -12,13 +12,9 @@ class Table extends Component {
         return (
             <>
                 <div className="row">              
-                    {/* <div className="row-header">Incomes</div>
-                    <hr className="row-hr"/> */}
                     <List adjustTotal={this.props.adjustTotal} flip={false}/>
                 </div>
                 <div className="row">
-                    {/* <div className="row-header">Expenses</div>
-                    <hr className="row-hr"/> */}
                     <List adjustTotal={this.props.adjustTotal} flip={true}/>
                 </div>
             </>
