@@ -60,11 +60,11 @@ class Form extends Component {
                                 />
                             </div>
                             <div>
-                                <IconButton aria-label="submit" onClick={this.submitForm}>
-                                    <AddIcon />
-                                </IconButton>
                                 <IconButton aria-label="minus" onClick={this.undoForm}>
                                     <RetractIcon />
+                                </IconButton>
+                                <IconButton aria-label="submit" id="submit-form" onClick={this.submitForm}>
+                                    <AddIcon />
                                 </IconButton>
                             </div>
                         </form>    
