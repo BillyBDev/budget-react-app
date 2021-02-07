@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/AddBoxOutlined';
 import RetractIcon from '@material-ui/icons/ExpandLess';
+import { ThemeProvider } from '@material-ui/core';
 
 class Form extends Component {
 
@@ -34,7 +35,12 @@ class Form extends Component {
     render(){
         const {desc, amount} = this.state;
 
+        let color = "primary";
+
         if (this.props.showForm) {
+            if (this.props.flip){
+                color = "secondary";
+            }
             return (
                 <div>
                     <div className="hiddenForm">
@@ -46,6 +52,7 @@ class Form extends Component {
                                     // variant="outlined"
                                     name="desc"
                                     value={desc}
+                                    color={color}
                                     onChange={this.handleChange}
                                 />
                             </div>
@@ -55,6 +62,7 @@ class Form extends Component {
                                     type="text" 
                                     label="Amount"
                                     name="amount"
+                                    color={color}
                                     value={amount}
                                     onChange={this.handleChange} 
                                 />

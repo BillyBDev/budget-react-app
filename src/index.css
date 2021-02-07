@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #262626;
 }
 
 
@@ -32,6 +32,22 @@ code {
   margin-bottom: 2em;
 }
 
+.positive {
+  color: #99ffc0
+}
+
+.negative {
+  color: #ff7a85
+}
+
+.primary {
+  color: #5fff8f
+}
+
+.secondary {
+  color: #ff3d78
+}
+
 #net-label {
   font-size: 1.6em;
   margin-top: 0.5em;
@@ -54,7 +70,6 @@ code {
 
 #header-hr {
   width: 80%;
-  color:cyan;
 }
 
 .row {
@@ -67,7 +82,7 @@ code {
 }
 
 .row-hr {
-  width: 170px;
+  width: 70%;
   margin-left: 0px;
 }
 

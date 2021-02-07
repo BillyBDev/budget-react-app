@@ -75,22 +75,23 @@ class List extends Component {
     }
     
     render(){
-        let listHeader;
-        if (this.props.flip === false){
-            listHeader = "Incomes";
-        } else {
+        let listHeader = "Incomes";
+        let colorClass = "primary";
+        if (this.props.flip){
             listHeader = "Expenses";
+            colorClass="secondary";
         }
         return (
             <div>
-                <div className="row-header">
-                    {listHeader}
+                <div className={"row-header " + colorClass}>
+                    <span className={colorClass}>{listHeader}</span>
                     <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
-                    <hr className="row-hr"/>
+                    <hr className={"row-hr " + colorClass}/>
                     <Form 
                     showForm={this.state.showForm} 
                     toggleForm={this.toggleForm}
                     addItem={this.addItem}
+                    flip={this.props.flip}
                     />
                 </div>
 

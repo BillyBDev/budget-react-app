@@ -1,6 +1,24 @@
 import React, {Component} from 'react';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Header from './Header';
 import Table from './Table';
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: "#5fff8f"
+    },
+    secondary: {
+      main: "#ff3d78"
+    }
+    // },
+    // warning: {
+    //   main: "#ff3d78"
+    // }
+  }
+})
+
 
 
 class App extends Component {
@@ -15,11 +33,14 @@ class App extends Component {
 
   render (){
     return (
-      <div class="container">
-        <Header total={this.state.total}/>
-        <hr id="header-hr"></hr>
-        <Table adjustTotal={this.adjustTotal}/>
-      </div>
+      <ThemeProvider theme={theme}>
+        <div class="container">
+          <Header total={this.state.total}/>
+          <hr id="header-hr"></hr>
+          <Table adjustTotal={this.adjustTotal}/>
+        </div>
+      </ThemeProvider>
+
 
     )
   }
