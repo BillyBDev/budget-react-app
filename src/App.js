@@ -36,7 +36,6 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <div class="container">
           <Header total={this.state.total}/>
-          <hr id="header-hr"></hr>
           <Table adjustTotal={this.adjustTotal}/>
         </div>
       </ThemeProvider>

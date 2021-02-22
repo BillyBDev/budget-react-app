@@ -30,7 +30,7 @@ const ItemsList = (props) => {
                     <IconButton aria-label="delete" onClick={() => {props.removeItem(index, item.amount)}}>
                         <MinusIcon />
                     </IconButton>
-                    {item.desc} - {item.amount} 
+                    $<span class="list-amt">{item.amount}</span> - {item.desc}
                 </div>
             </li>
         )
@@ -52,7 +52,8 @@ class List extends Component {
 
     addItem = (obj) => {
         let newItem = obj;
-        let amt = obj.amount;
+        let amt = Number(obj.amount).toFixed(2);
+        newItem.amount = Number(amt);
         if (this.props.flip) {
             amt = amt * -1;
         }
@@ -86,7 +87,7 @@ class List extends Component {
                 <div className={"row-header " + colorClass}>
                     <span className={colorClass}>{listHeader}</span>
                     <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
-                    <hr className={"row-hr " + colorClass}/>
+                    <hr className={"row-hr"}/>
                     <Form 
                     showForm={this.state.showForm} 
                     toggleForm={this.toggleForm}
