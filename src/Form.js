@@ -9,7 +9,8 @@ class Form extends Component {
 
     initialState = {
         desc: '',
-        amount: ''
+        amount: '',
+        error: false
     }
 
     state = this.initialState;
@@ -27,9 +28,15 @@ class Form extends Component {
     }
 
     submitForm = () => {
+        let regex = /^[$]?(([0-9]{1,3}[,]?){0,3}[0-9]{1,3}[.]?[0-9]{0,2}|[.][0-9]{1,2})$/;
+        if (regex.test(this.state.amount)) {
+        this.state.amount = Number(this.state.amount.replace(/[$,]/g, "")).toFixed(2)
         this.props.addItem(this.state);
         this.setState(this.initialState);
         this.props.toggleForm();
+        } else {
+            this.setState({error: true})
+        }
     }
 
     render(){
@@ -41,6 +48,12 @@ class Form extends Component {
             if (this.props.flip){
                 color = "secondary";
             }
+
+            let helperText = "";
+            if (this.state.error){
+                helperText = "Please enter a valid amount."
+            }
+            
             return (
                 <div>
                     <div className="hiddenForm">
@@ -54,17 +67,21 @@ class Form extends Component {
                                     value={desc}
                                     color={color}
                                     onChange={this.handleChange}
+                                    inputProps={{ maxLength: 30 }}
                                 />
                             </div>
                             <br />
                             <div>
                                 <TextField  
                                     type="text" 
+                                    error={this.state.error}
+                                    helperText={helperText}
                                     label="Amount"
                                     name="amount"
                                     color={color}
                                     value={amount}
                                     onChange={this.handleChange} 
+                                    inputProps={{ maxLength: 20 }}
                                 />
                             </div>
                             <div>

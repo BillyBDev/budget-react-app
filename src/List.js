@@ -24,13 +24,14 @@ const AddItemBtn = (props) => {
 
 const ItemsList = (props) => {
     const list = props.items.map((item, index) => {
+        let desc = item.desc && " - " + item.desc;
         return (
             <li className="income-list-item"> 
                 <div className="delete">
                     <IconButton aria-label="delete" onClick={() => {props.removeItem(index, item.amount)}}>
                         <MinusIcon />
                     </IconButton>
-                    $<span class="list-amt">{item.amount}</span> - {item.desc}
+                    $<span class="list-amt">{item.amount}</span>{desc}
                 </div>
             </li>
         )
@@ -50,10 +51,8 @@ class List extends Component {
         });
     }
 
-    addItem = (obj) => {
-        let newItem = obj;
-        let amt = Number(obj.amount).toFixed(2);
-        newItem.amount = Number(amt);
+    addItem = (newItem) => {
+        let amt = newItem.amount
         if (this.props.flip) {
             amt = amt * -1;
         }
