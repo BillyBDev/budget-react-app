@@ -18,12 +18,15 @@ body {
   min-height: 70vh;
   margin: auto;
   margin-top: 10vh;
+  padding-bottom: 3vh;
   /* border: 3px solid #151515; */
   background-color: #222;
   box-shadow: 2px 1px 9px -1px rgba(0,0,0,0.42);
   -webkit-box-shadow: 2px 1px 9px -1px rgba(0,0,0,0.42);
   -moz-box-shadow: 2px 1px 9px -1px rgba(0,0,0,0.42);
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -37,6 +40,19 @@ code {
   padding-bottom: 2em;
   /* background-color: #333; */
   background-color: #392e97;
+}
+
+@media (max-width: 600px){
+  .container {
+    width: 85%;
+    margin-top: 4vh;
+    min-height: 77vh;
+    font-size: 95%;
+  }
+  .header {
+    padding-top: 1.5em;
+    padding-bottom: 1.2em;
+  }
 }
 
 .positive {
