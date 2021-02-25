@@ -66,7 +66,8 @@ class Form extends Component {
                                     value={desc}
                                     color={color}
                                     onChange={this.handleChange}
-                                    inputProps={{ maxLength: 30 }}
+                                    inputProps={{ maxLength: 25 }}
+                                    InputProps={{ style: { fontSize: "16px" } }}
                                 />
                             </div>
                             <br />
@@ -81,6 +82,7 @@ class Form extends Component {
                                     value={amount}
                                     onChange={this.handleChange} 
                                     inputProps={{ maxLength: 20 }}
+                                    InputProps={{ style: { fontSize: "16px" } }}
                                 />
                             </div>
                             <div>

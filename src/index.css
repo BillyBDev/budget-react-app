@@ -42,18 +42,7 @@ code {
   background-color: #392e97;
 }
 
-@media (max-width: 600px){
-  .container {
-    width: 85%;
-    margin-top: 4vh;
-    min-height: 77vh;
-    font-size: 95%;
-  }
-  .header {
-    padding-top: 1.5em;
-    padding-bottom: 1.2em;
-  }
-}
+
 
 .positive {
   color: #99ffc0
@@ -84,15 +73,10 @@ code {
 #day-label {
   margin-top: 0.3em;
   margin-bottom: 0.3em;
-  /* margin-right: 13.6%; */
 }
 
 #day-amt {
   font-size: 1.3em;
-}
-
-#header-hr {
-  width: 80%;
 }
 
 .row {
@@ -138,4 +122,23 @@ ul {
   display: inline;
   margin-left: 20px;
   size: 0.5em;
+}
+
+
+@media (max-width: 600px){
+  .container {
+    width: 85%;
+    margin-top: 4vh;
+    min-height: 77vh;
+  }
+  .header {
+    padding-top: 1.5em;
+    padding-bottom: 1.2em;
+  }
+  .row-hr {
+    width: 65%;
+  }
+  .income-list-item {
+    margin-left: 13%;
+  }
 }
