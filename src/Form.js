@@ -29,7 +29,7 @@ class Form extends Component {
     submitForm = () => {
         let regex = /^[$]?(([0-9]{1,3}[,]?){0,3}[0-9]{1,3}[.]?[0-9]{0,2}|[.][0-9]{1,2})$/;
         if (regex.test(this.state.amount)) {
-        this.state.amount = Number(this.state.amount.replace(/[$,]/g, "")).toFixed(2)
+        this.setState({amount: Number(this.state.amount.replace(/[$,]/g, "")).toFixed(2)})
         this.props.addItem(this.state);
         this.setState(this.initialState);
         this.props.toggleForm();
