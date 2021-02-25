@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import Form from './Form';
-// import { Button } from 'semantic-ui-react';
-import Button from '@material-ui/core/button';
-import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/AddBoxOutlined';
 import MinusIcon from '@material-ui/icons/RemoveCircleOutline';

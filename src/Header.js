@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { useTheme } from '@material-ui/core/styles';
 
 function pocketAmt(num){
     let ans = num / 30;
@@ -7,19 +6,13 @@ function pocketAmt(num){
 }
 
 function DailyAmount(props){
-    // if (props.total > 0){
         return (
             <>
                 <div id="day-label">Per day: <span id="day-amt" class={props.colorClass}>${pocketAmt(props.total)}</span></div>
             </>
 
         )
-    } 
-    // else {
-    //     return null
-    // }
-// }
-
+    }
 
 
 const Header = (props) => {

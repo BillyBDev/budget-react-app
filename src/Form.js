@@ -3,7 +3,6 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/AddBoxOutlined';
 import RetractIcon from '@material-ui/icons/ExpandLess';
-import { ThemeProvider } from '@material-ui/core';
 
 class Form extends Component {
 
