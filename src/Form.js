@@ -26,7 +26,8 @@ class Form extends Component {
         this.setState(this.initialState);
     }
 
-    submitForm = () => {
+    submitForm = (event) => {
+        event.preventDefault();
         let regex = /^[$]?(([0-9]{1,3}[,]?){0,3}[0-9]{1,3}[.]?[0-9]{0,2}|[.][0-9]{1,2})$/;
         if (regex.test(this.state.amount)) {
         this.setState({amount: Number(this.state.amount.replace(/[$,]/g, "")).toFixed(2)})
@@ -89,7 +90,7 @@ class Form extends Component {
                                 <IconButton aria-label="minus" onClick={this.undoForm}>
                                     <RetractIcon />
                                 </IconButton>
-                                <IconButton aria-label="submit" id="submit-form" onClick={this.submitForm}>
+                                <IconButton aria-label="submit" type="submit" id="submit-form" onClick={this.submitForm}>
                                     <AddIcon />
                                 </IconButton>
                             </div>
