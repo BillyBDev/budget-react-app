@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/AddBoxOutlined';
 import RetractIcon from '@material-ui/icons/ExpandLess';
@@ -9,6 +13,7 @@ class Form extends Component {
     initialState = {
         desc: '',
         amount: '',
+        basis: 30,
         error: false
     }
 
@@ -86,13 +91,30 @@ class Form extends Component {
                                     InputProps={{ style: { fontSize: "16px" } }}
                                 />
                             </div>
-                            <div>
-                                <IconButton aria-label="minus" onClick={this.undoForm}>
+                            <div class="form-footer">
+                                <IconButton aria-label="minus" onClick={this.undoForm} id="retract-form">
                                     <RetractIcon />
                                 </IconButton>
-                                <IconButton aria-label="submit" type="submit" id="submit-form" onClick={this.submitForm}>
-                                    <AddIcon />
-                                </IconButton>
+                                <FormControl>
+                                    <Select
+                                        name="basis"
+                                        labelId="basis"
+                                        value={this.state.basis}
+                                        onChange={this.handleChange}
+                                        color={color}
+                                        style={{minWidth: 70}}
+                                        displayEmpty
+                                        inputProps={{ 'aria-label': 'Without label' }}
+                                        >
+                                            <MenuItem value={1}>Daily</MenuItem>
+                                            <MenuItem value={7}>Weekly</MenuItem>
+                                            <MenuItem value={14}>Bi-Weekly</MenuItem>
+                                            <MenuItem value={30}>Monthly</MenuItem>
+                                    </Select>
+                                </FormControl>
+                                    <IconButton aria-label="submit" type="submit" id="submit-form" onClick={this.submitForm}>
+                                        <AddIcon />
+                                    </IconButton>
                             </div>
                         </form>    
                     </div>

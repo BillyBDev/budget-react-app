@@ -104,8 +104,22 @@ code {
   margin-left: 7px;
 }
 
+.hiddenForm {
+  width: 70%;
+}
+
+.form-footer {
+  margin-top: 0.5em;
+}
+
+#retract-form {
+  margin-right: 5.5%;
+  margin-top: -4px;
+}
+
 #submit-form {
-  margin-left: 25%;
+  margin-left: 5.5%;
+  margin-top: -4px;
 }
 
 ul {
@@ -121,9 +135,7 @@ ul {
   font-size: 1.15em;
 }
 
-.hiddenForm {
-  width: 70%;
-}
+
 
 .delete {
   display: inline;
@@ -131,6 +143,12 @@ ul {
   size: 0.5em;
 }
 
+.footer {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: .75vh;
+  margin-left: 375px;
+}
 
 @media (max-width: 600px){
   .container {
@@ -150,9 +168,8 @@ ul {
   }
 }
 
-.footer {
-  text-align: center;
-  font-size: 1.1em;
-  margin-top: .75vh;
-  margin-left: 400px;
+@media (max-width: 1000px){
+  .footer {
+    margin-left: 27vw;
+  }
 }
