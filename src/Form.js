@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import IconButton from '@material-ui/core/IconButton';
@@ -111,6 +111,7 @@ class Form extends Component {
                                             <MenuItem value={14}>Bi-Weekly</MenuItem>
                                             <MenuItem value={30}>Monthly</MenuItem>
                                     </Select>
+                                    <FormHelperText>Recurrence</FormHelperText>
                                 </FormControl>
                                     <IconButton aria-label="submit" type="submit" id="submit-form" onClick={this.submitForm}>
                                         <AddIcon />
