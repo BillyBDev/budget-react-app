@@ -85,10 +85,10 @@ class List extends Component {
                     <AddItemBtn showForm={this.state.showForm} toggleForm={this.toggleForm}/>
                     <hr className={"row-hr"}/>
                     <Form 
-                    showForm={this.state.showForm} 
-                    toggleForm={this.toggleForm}
-                    addItem={this.addItem}
-                    flip={this.props.flip}
+                        showForm={this.state.showForm} 
+                        toggleForm={this.toggleForm}
+                        addItem={this.addItem}
+                        flip={this.props.flip}
                     />
                 </div>
 

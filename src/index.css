@@ -14,7 +14,7 @@ body {
   text-align: center;
   margin-top: 5vh;
   margin-bottom: 3vh;
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #9ab6ff;
 }
 
@@ -113,12 +113,13 @@ code {
 }
 
 #retract-form {
-  margin-right: 5.5%;
+  margin-left: -5px;
+  margin-right: 2%;
   margin-top: -4px;
 }
 
 #submit-form {
-  margin-left: 5.5%;
+  margin-left: 2%;
   margin-top: -4px;
 }
 
@@ -150,11 +151,21 @@ ul {
   margin-left: 375px;
 }
 
+@media (max-width: 1000px){
+  .footer {
+    margin-left: 27vw;
+  }
+}
+
 @media (max-width: 600px){
-  .container {
-    width: 85%;
+  .title {
     margin-top: 4vh;
-    min-height: 77vh;
+    font-size: 2em;
+  }
+  .container {
+    width: 87%;
+    margin-top: 2.5vh;
+    min-height: 81vh;
   }
   .header {
     padding-top: 1.5em;
@@ -168,8 +179,15 @@ ul {
   }
 }
 
-@media (max-width: 1000px){
-  .footer {
-    margin-left: 27vw;
+@media (max-width: 400px) {
+  #retract-form {
+    margin-left: -10px;
+    margin-right: -1%;
+    margin-top: -4px;
+  }
+  
+  #submit-form {
+    margin-left: -1%;
+    margin-top: -4px;
   }
 }

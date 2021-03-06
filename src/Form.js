@@ -35,8 +35,10 @@ class Form extends Component {
         event.preventDefault();
         let regex = /^[$]?(([0-9]{1,3}[,]?){0,3}[0-9]{1,3}[.]?[0-9]{0,2}|[.][0-9]{1,2})$/;
         if (regex.test(this.state.amount)) {
-        this.setState({amount: Number(this.state.amount.replace(/[$,]/g, "")).toFixed(2)})
-        this.props.addItem(this.state);
+        let newItem = this.state;
+        let amt = newItem.amount * 30 / newItem.basis;
+        newItem.amount = Number(amt.toFixed(2))
+        this.props.addItem(newItem);
         this.setState(this.initialState);
         this.props.toggleForm();
         } else {
@@ -102,7 +104,7 @@ class Form extends Component {
                                         value={this.state.basis}
                                         onChange={this.handleChange}
                                         color={color}
-                                        style={{minWidth: 70}}
+                                        style={{minWidth: 86}}
                                         displayEmpty
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
