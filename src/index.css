@@ -21,7 +21,7 @@ body {
 .container {
   width: 55%;
   max-width: 600px;
-  min-height: 70vh;
+  min-height: 74vh;
   margin: auto;
   padding-bottom: 3vh;
   /* border: 3px solid #151515; */
@@ -149,6 +149,12 @@ ul {
   font-size: 1.1em;
   margin-top: .75vh;
   margin-left: 375px;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 1000px){

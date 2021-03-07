@@ -86,10 +86,11 @@ class Form extends Component {
                                     helperText={helperText}
                                     label="Amount"
                                     name="amount"
+                                    id="amount"
                                     color={color}
                                     value={amount}
                                     onChange={this.handleChange} 
-                                    onFocus={(event) => {event.preventDefault()}}
+                                    onFocus={() => {document.getElementById("amount").focus({preventScroll: true})}}
                                     inputProps={{ maxLength: 20 }}
                                     InputProps={{ style: { fontSize: "16px" } }}
                                 />
