@@ -89,7 +89,7 @@ class Form extends Component {
                                     color={color}
                                     value={amount}
                                     onChange={this.handleChange} 
-                                    onFocus={(event) => {event.stopPropagation()}}
+                                    onFocus={(event) => {event.preventDefault()}}
                                     inputProps={{ maxLength: 20 }}
                                     InputProps={{ style: { fontSize: "16px" } }}
                                 />
