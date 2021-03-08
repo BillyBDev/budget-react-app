@@ -90,7 +90,7 @@ class Form extends Component {
                                     color={color}
                                     value={amount}
                                     onChange={this.handleChange} 
-                                    onFocus={() => {document.getElementById("amount").focus({preventScroll: true})}}
+                                    // onFocus={() => {document.getElementById("amount").focus({preventScroll: true})}}
                                     inputProps={{ maxLength: 20 }}
                                     InputProps={{ style: { fontSize: "16px" } }}
                                 />
@@ -108,6 +108,7 @@ class Form extends Component {
                                         color={color}
                                         style={{minWidth: 86}}
                                         displayEmpty
+                                        onClick={(event) => {event.stopPropagation()}}
                                         // onOpen={(event) => {event.preventDefault()}}
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
