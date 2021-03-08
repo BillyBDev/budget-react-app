@@ -104,21 +104,13 @@ class Form extends Component {
                                     <Select
                                         name="basis"
                                         labelId="basis"
+                                        id="basis"
                                         value={this.state.basis}
                                         onChange={this.handleChange}
                                         color={color}
                                         style={{minWidth: 86}}
                                         displayEmpty
-                                        // onClick={(event) => {event.stopPropagation()}}
-                                        // onOpen={(event) => {event.preventDefault()}}
-                                        // onOpen={() => {
-                                        //     document.getElementById('desc').blur();
-                                        //     document.getElementById('amount').blur();
-                                        // }}
-                                        MenuProps={{'onEnter': () => {
-                                            document.getElementById('desc').blur();
-                                            document.getElementById('amount').blur();
-                                        }}}
+                                        onOpen={() => {setTimeout(document.getElementById("basis").click, 500)}}
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
                                             <MenuItem value={1}>Daily</MenuItem>
