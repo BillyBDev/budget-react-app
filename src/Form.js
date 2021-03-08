@@ -111,10 +111,14 @@ class Form extends Component {
                                         displayEmpty
                                         // onClick={(event) => {event.stopPropagation()}}
                                         // onOpen={(event) => {event.preventDefault()}}
-                                        onOpen={() => {
+                                        // onOpen={() => {
+                                        //     document.getElementById('desc').blur();
+                                        //     document.getElementById('amount').blur();
+                                        // }}
+                                        MenuProps={{'onEnter': () => {
                                             document.getElementById('desc').blur();
                                             document.getElementById('amount').blur();
-                                        }}
+                                        }}}
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
                                             <MenuItem value={1}>Daily</MenuItem>
