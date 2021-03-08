@@ -69,6 +69,7 @@ class Form extends Component {
                                 <TextField
                                     type="text"                                 
                                     label="Description"
+                                    id="desc"
                                     // variant="outlined"
                                     name="desc"
                                     value={desc}
@@ -108,8 +109,12 @@ class Form extends Component {
                                         color={color}
                                         style={{minWidth: 86}}
                                         displayEmpty
-                                        onClick={(event) => {event.stopPropagation()}}
+                                        // onClick={(event) => {event.stopPropagation()}}
                                         // onOpen={(event) => {event.preventDefault()}}
+                                        onOpen={() => {
+                                            document.getElementById('desc').blur();
+                                            document.getElementById('amount').blur();
+                                        }}
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
                                             <MenuItem value={1}>Daily</MenuItem>
