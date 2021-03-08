@@ -87,11 +87,9 @@ class Form extends Component {
                                     helperText={helperText}
                                     label="Amount"
                                     name="amount"
-                                    id="amount"
                                     color={color}
                                     value={amount}
                                     onChange={this.handleChange} 
-                                    // onFocus={() => {document.getElementById("amount").focus({preventScroll: true})}}
                                     inputProps={{ maxLength: 20 }}
                                     InputProps={{ style: { fontSize: "16px" } }}
                                 />
@@ -104,19 +102,17 @@ class Form extends Component {
                                     <Select
                                         name="basis"
                                         labelId="basis"
-                                        id="basis"
                                         value={this.state.basis}
                                         onChange={this.handleChange}
                                         color={color}
                                         style={{minWidth: 86}}
                                         displayEmpty
-                                        onOpen={() => {setTimeout(document.getElementById("basis").click, 500)}}
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
-                                            <MenuItem value={1}>Daily</MenuItem>
-                                            <MenuItem value={7}>Weekly</MenuItem>
-                                            <MenuItem value={14}>Bi-Weekly</MenuItem>
                                             <MenuItem value={30}>Monthly</MenuItem>
+                                            <MenuItem value={14}>Bi-Weekly</MenuItem>
+                                            <MenuItem value={7}>Weekly</MenuItem>
+                                            <MenuItem value={1}>Daily</MenuItem>
                                     </Select>
                                     <FormHelperText>Recurrence</FormHelperText>
                                 </FormControl>
