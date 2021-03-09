@@ -6,14 +6,14 @@ function pocketAmt(num){
 }
 
 function DailyAmount(props){
-        return (
-            <>
-                <div id="day-label">Per day: <span id="day-amt" class={props.colorClass}>${pocketAmt(props.total)}</span></div>
-            </>
-
-        )
-    }
-
+    return (
+        <div id="day-label">
+            Per day: <span id="day-amt" class={props.colorClass}>
+                ${pocketAmt(props.total)}
+            </span>
+        </div>
+    )
+}
 
 const Header = (props) => {
     let colorClass;
@@ -25,7 +25,6 @@ const Header = (props) => {
     return (
         <div class="header">
             <div id="net-label">Net: <span id="net-amt" class={colorClass}>${props.total.toFixed(2)}</span></div>
-            {/* <div id="net-amt">{props.total.toFixed(2)}</div> */}
             <DailyAmount total={props.total} colorClass={colorClass}/>
         </div>
     )

@@ -91,9 +91,7 @@ class List extends Component {
                         flip={this.props.flip}
                     />
                 </div>
-
-                <ItemsList items={this.state.items} removeItem={this.removeItem} />
-                
+                <ItemsList items={this.state.items} removeItem={this.removeItem} />                
             </div>
         )
     }

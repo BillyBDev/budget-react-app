@@ -9,7 +9,6 @@ import AddIcon from '@material-ui/icons/AddBoxOutlined';
 import RetractIcon from '@material-ui/icons/ExpandLess';
 
 class Form extends Component {
-
     initialState = {
         desc: '',
         amount: '',
@@ -70,7 +69,6 @@ class Form extends Component {
                                     type="text"                                 
                                     label="Description"
                                     id="desc"
-                                    // variant="outlined"
                                     name="desc"
                                     value={desc}
                                     color={color}

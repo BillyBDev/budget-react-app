@@ -14,14 +14,8 @@ const theme = createMuiTheme({
     secondary: {
       main: "#ff3d78"
     }
-    // },
-    // warning: {
-    //   main: "#ff3d78"
-    // }
   }
 })
-
-
 
 class App extends Component {
   state = {
@@ -55,18 +49,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-state = {
-  2020: [
-    {
-      name: "oct",
-      incomes: [],
-      expenses: []
-    }
-    ...
-  ],
-  2021: [],
-  ...
-}
-*/
