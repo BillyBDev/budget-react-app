@@ -68,6 +68,7 @@ class Form extends Component {
                                 <TextField
                                     type="text"                                 
                                     label="Description"
+                                    autoFocus={true}
                                     id="desc"
                                     name="desc"
                                     value={desc}

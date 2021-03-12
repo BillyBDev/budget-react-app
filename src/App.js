@@ -37,7 +37,7 @@ class App extends Component {
         </div>
         <div class="footer">
           by Billy Brown III&nbsp;&nbsp;
-          <IconButton href="https://github.com/BillyBDev" size="small" aria-label="github">
+          <IconButton href="https://github.com/BillyBDev" target="_blank" size="small" aria-label="github">
             <GitHubIcon />
           </IconButton>
         </div>
