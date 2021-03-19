@@ -108,6 +108,7 @@ class Form extends Component {
                                         displayEmpty
                                         inputProps={{ 'aria-label': 'Without label' }}
                                         >
+                                            <MenuItem value={365}>Yearly</MenuItem>
                                             <MenuItem value={30}>Monthly</MenuItem>
                                             <MenuItem value={14}>Bi-Weekly</MenuItem>
                                             <MenuItem value={7}>Weekly</MenuItem>
