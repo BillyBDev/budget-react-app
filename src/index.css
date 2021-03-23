@@ -175,7 +175,7 @@ ul {
 
 @media (max-width: 600px){
   .title {
-    margin-top: 4vh;
+    margin-top: 4.25vh;
     font-size: 2em;
   }
   .subtitle {
@@ -183,8 +183,8 @@ ul {
   }
   .container {
     width: 100%;
-    margin-top: 2.5vh;
-    min-height: 95vh;
+    margin-top: 2.75vh;
+    min-height: 109vh;
   }
   .header {
     padding-top: 1.5em;
@@ -200,7 +200,7 @@ ul {
     margin-left: 13%;
   }
   .footer {
-    font-size: 1em;
+    font-size: 1.05em;
     margin-top: -2.75em;
     margin-left: 42vw;
   }
