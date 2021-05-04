@@ -21,14 +21,18 @@ const AddItemBtn = (props) => {
 
 const ItemsList = (props) => {
     const list = props.items.map((item, index) => {
-        let desc = item.desc && " - " + item.desc;
+        let desc = " - " + item.desc;
+        let amt = item.amount.toFixed(2);
+        if (amt.includes(".00")){
+            amt = amt.slice(0, amt.indexOf(".00"));
+        }
         return (
             <li className="income-list-item"> 
                 <div className="delete">
                     <IconButton aria-label="delete" onClick={() => {props.removeItem(index, item.amount)}}>
                         <MinusIcon />
                     </IconButton>
-                    $<span class="list-amt">{item.amount}</span>{desc}
+                    $<span class="list-amt">{amt}</span>{desc}
                 </div>
             </li>
         )

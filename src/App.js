@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LanguageIcon from '@material-ui/icons/Language';
 import Header from './Header';
 import Table from './Table';
 
@@ -30,15 +31,19 @@ class App extends Component {
   render (){
     return (
       <ThemeProvider theme={theme}>
-        <div class="title">Monthly Budget Planner</div>
-        <div class="subtitle">A minimalist budget creation tool</div>
+        <div class="title">Personal Budget Creator</div>
+        <div class="subtitle">A monthly budget creation tool</div>
         <div class="container">
           <Header total={this.state.total}/>
           <Table adjustTotal={this.adjustTotal}/>
         </div>
         <div class="footer">
           by Billy Brown III&nbsp;&nbsp;
-          <IconButton href="https://github.com/BillyBDev" target="_blank" size="small" aria-label="github">
+          <IconButton href="https://www.billybdev.com" target="_blank" size="small" aria-label="portfolio">
+            <LanguageIcon />
+          </IconButton>
+          &nbsp;
+          <IconButton href="https://www.github.com/BillyBDev" target="_blank" size="small" aria-label="github">
             <GitHubIcon />
           </IconButton>
         </div>
