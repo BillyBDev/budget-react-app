@@ -31,8 +31,8 @@ class App extends Component {
   render (){
     return (
       <ThemeProvider theme={theme}>
-        <div class="title">Personal Budget Creator</div>
-        <div class="subtitle">A monthly budget creation tool</div>
+        <div class="title">Monthly Budget Creator</div>
+        <div class="subtitle">Add incomes & expenses to get started</div>
         <div class="container">
           <Header total={this.state.total}/>
           <Table adjustTotal={this.adjustTotal}/>
