@@ -11,10 +11,22 @@ class Table extends Component {
         return (
             <div className="table">
                 <div className="row">              
-                    <List adjustTotal={this.props.adjustTotal} flip={false}/>
+                    <List 
+                        items={this.props.incomeItems} 
+                        addItem={this.props.addItem} 
+                        removeItem={this.props.removeItem} 
+                        flip={false}
+                        // adjustTotal={this.props.adjustTotal} 
+                    />
                 </div>
                 <div className="row">
-                    <List adjustTotal={this.props.adjustTotal} flip={true}/>
+                    <List 
+                        items={this.props.expenseItems} 
+                        addItem={this.props.addItem} 
+                        removeItem={this.props.removeItem} 
+                        flip={true}
+                        // adjustTotal={this.props.adjustTotal} 
+                    />
                 </div>
             </div>
         )

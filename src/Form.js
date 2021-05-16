@@ -37,7 +37,7 @@ class Form extends Component {
         let newItem = this.state;
         let amt = newItem.amount * 30 / newItem.basis;
         newItem.amount = Number(amt.toFixed(2))
-        this.props.addItem(newItem);
+        this.props.addItem(newItem, this.props.flip);
         this.setState(this.initialState);
         this.props.toggleForm();
         } else {

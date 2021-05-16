@@ -29,7 +29,7 @@ const ItemsList = (props) => {
         return (
             <li className="income-list-item"> 
                 <div className="delete">
-                    <IconButton aria-label="delete" onClick={() => {props.removeItem(index, item.amount)}}>
+                    <IconButton aria-label="delete" onClick={() => {props.removeItem(index, item.amount, props.flip)}}>
                         <MinusIcon />
                     </IconButton>
                     $<span class="list-amt">{amt}</span>{desc}
@@ -52,28 +52,28 @@ class List extends Component {
         });
     }
 
-    addItem = (newItem) => {
-        let amt = newItem.amount
-        if (this.props.flip) {
-            amt = amt * -1;
-        }
-        this.props.adjustTotal(amt);
-        this.setState({
-            items: [...this.state.items, newItem]
-        });
-    }
+    // addItem = (newItem) => {
+    //     let amt = newItem.amount
+    //     if (this.props.flip) {
+    //         amt = amt * -1;
+    //     }
+    //     this.props.adjustTotal(amt);
+    //     this.setState({
+    //         items: [...this.state.items, newItem]
+    //     });
+    // }
 
-    removeItem = (index, amount) => {
-        const items = this.state.items;
-        let amt = amount;
-        if (this.props.flip) {
-            amt = amt * -1;
-        }
-        this.props.adjustTotal(amt * -1);
-        this.setState({items: items.filter((item, i) => {
-            return i !== index
-        })})
-    }
+    // removeItem = (index, amount) => {
+    //     const items = this.state.items;
+    //     let amt = amount;
+    //     if (this.props.flip) {
+    //         amt = amt * -1;
+    //     }
+    //     this.props.adjustTotal(amt * -1);
+    //     this.setState({items: items.filter((item, i) => {
+    //         return i !== index
+    //     })})
+    // }
     
     render(){
         let listHeader = "Incomes";
@@ -91,11 +91,15 @@ class List extends Component {
                     <Form 
                         showForm={this.state.showForm} 
                         toggleForm={this.toggleForm}
-                        addItem={this.addItem}
+                        addItem={this.props.addItem}
                         flip={this.props.flip}
                     />
                 </div>
-                <ItemsList items={this.state.items} removeItem={this.removeItem} />                
+                <ItemsList 
+                    items={this.props.items} 
+                    removeItem={this.props.removeItem} 
+                    flip={this.props.flip} 
+                />                
             </div>
         )
     }

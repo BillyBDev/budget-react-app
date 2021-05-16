@@ -148,8 +148,13 @@ ul {
   text-align: center;
   font-size: 1.1em;
   margin-top: .75vh;
-  margin-left: 385px;
+  margin-left: 365px;
   margin-bottom: 10px;
+}
+
+#save {
+  position: absolute;
+  margin-left: -330px;
 }
 
 @media (min-width: 1700px) {
@@ -165,11 +170,17 @@ ul {
   .footer {
     margin-left: 27vw;
   }
+  #save {
+    margin-left: -220px;
+  }
 }
 
 @media (max-width: 750px){
   .container {
     width: 67.5%;
+  }
+  #save {
+    margin-left: -180px
   }
 }
 
@@ -203,6 +214,9 @@ ul {
     font-size: 1.05em;
     margin-top: -2.75em;
     margin-left: 42vw;
+  }
+  #save {
+    margin-left: -42vw;
   }
 }
 
