@@ -154,7 +154,21 @@ ul {
 
 #save {
   position: absolute;
-  margin-left: -330px;
+  margin-left: -350px;
+}
+
+#save-msg {
+  font-size: 0.95em;
+  position: absolute;
+  margin: -2.35em -12em 0 -6em;
+  opacity: 0;
+  transition: opacity 2s;
+  transition-timing-function: ease-in;
+}
+
+#save-btn:active + #save-msg {
+  opacity: 100%;
+  transition: opacity 0s;
 }
 
 @media (min-width: 1700px) {
@@ -171,7 +185,7 @@ ul {
     margin-left: 27vw;
   }
   #save {
-    margin-left: -220px;
+    margin-left: -25vw;
   }
 }
 
@@ -180,7 +194,7 @@ ul {
     width: 67.5%;
   }
   #save {
-    margin-left: -180px
+    margin-left: -170px
   }
 }
 
@@ -216,7 +230,12 @@ ul {
     margin-left: 42vw;
   }
   #save {
-    margin-left: -42vw;
+    margin-left: -41vw;
+    margin-top: -2px;
+  }
+  #save-msg {
+    margin-top: -2.65em;
+    margin-left: -8em;
   }
 }
 
@@ -226,7 +245,6 @@ ul {
     margin-right: -1%;
     margin-top: -4px;
   }
-  
   #submit-form {
     margin-left: -1%;
     margin-top: -4px;

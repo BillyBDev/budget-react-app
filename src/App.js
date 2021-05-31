@@ -77,7 +77,7 @@ class App extends Component {
   render (){
     return (
       <ThemeProvider theme={theme}>
-        <div class="title">Monthly Budget Creator</div>
+        <div class="title">Monthly Budget Maker</div>
         <div class="subtitle">Add incomes & expenses to get started</div>
         <div class="container">
           <Header total={this.state.total}/>
@@ -95,15 +95,18 @@ class App extends Component {
             {/* <IconButton size="small" aria-label="save">
               <SaveOutlinedIcon onClick={() => {window.localStorage.setItem('myState', JSON.stringify(this.state))}}/>
             </IconButton> */}
+            
             <Button
               variant="outlined"
               size="small"
               className="button"
+              id="save-btn"
               startIcon={<SaveOutlinedIcon />} 
               onClick={() => {window.localStorage.setItem('myState', JSON.stringify(this.state))}}
             >      
               Save
             </Button>
+            <span id="save-msg">Saved to your browser's local storage.</span>
           </span>
           by Billy Brown III&nbsp;&nbsp;
           <IconButton href="https://www.billybdev.com" target="_blank" size="small" aria-label="portfolio">
