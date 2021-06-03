@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LanguageIcon from '@material-ui/icons/Language';
-import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
 import Header from './Header';
 import Table from './Table';
+import Footer from './Footer';
 
 const theme = createMuiTheme({
   palette: {
@@ -75,6 +71,7 @@ class App extends Component {
   
 
   render (){
+    let msgHidden = "hidden";
     return (
       <ThemeProvider theme={theme}>
         <div class="title">Monthly Budget Maker</div>
@@ -88,35 +85,9 @@ class App extends Component {
             removeItem={this.removeItem}
            />
 
+
         </div>
-        <div class="footer">
-          <span id="save">
-         {/* minimal icon version of save button */}
-            {/* <IconButton size="small" aria-label="save">
-              <SaveOutlinedIcon onClick={() => {window.localStorage.setItem('myState', JSON.stringify(this.state))}}/>
-            </IconButton> */}
-            
-            <Button
-              variant="outlined"
-              size="small"
-              className="button"
-              id="save-btn"
-              startIcon={<SaveOutlinedIcon />} 
-              onClick={() => {window.localStorage.setItem('myState', JSON.stringify(this.state))}}
-            >      
-              Save
-            </Button>
-            <span id="save-msg">Saved to your browser's local storage.</span>
-          </span>
-          by Billy Brown III&nbsp;&nbsp;
-          <IconButton href="https://www.billybdev.com" target="_blank" size="small" aria-label="portfolio">
-            <LanguageIcon />
-          </IconButton>
-          &nbsp;
-          <IconButton href="https://www.github.com/BillyBDev" target="_blank" size="small" aria-label="github">
-            <GitHubIcon />
-          </IconButton>
-        </div>
+        <Footer appState={this.state}/>
       </ThemeProvider>
 
 
