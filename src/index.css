@@ -162,12 +162,18 @@ ul {
   position: absolute;
   margin: -2.35em -12em 0 -6em;
   opacity: 0;
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -o-transition: opacity 2s;
   transition: opacity 2s;
   transition-timing-function: ease-in;
 }
 
 #save-btn:active + #save-msg {
   opacity: 100%;
+  -webkit-transition: opacity 0s;
+  -moz-transition: opacity 0s;
+  -o-transition: opacity 0s;
   transition: opacity 0s;
 }
 
