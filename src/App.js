@@ -71,7 +71,6 @@ class App extends Component {
   
 
   render (){
-    let msgHidden = "hidden";
     return (
       <ThemeProvider theme={theme}>
         <div class="title">Monthly Budget Maker</div>
