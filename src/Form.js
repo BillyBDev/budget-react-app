@@ -34,12 +34,12 @@ class Form extends Component {
         event.preventDefault();
         let regex = /^[$]?(([0-9]{1,3}[,]?){0,3}[0-9]{1,3}[.]?[0-9]{0,2}|[.][0-9]{1,2})$/;
         if (regex.test(this.state.amount)) {
-        let newItem = this.state;
-        let amt = newItem.amount * 30 / newItem.basis;
-        newItem.amount = Number(amt.toFixed(2))
-        this.props.addItem(newItem, this.props.flip);
-        this.setState(this.initialState);
-        this.props.toggleForm();
+            let newItem = this.state;
+            let amt = newItem.amount.replace(",", "") * 30 / newItem.basis;
+            newItem.amount = Number(amt.toFixed(2))
+            this.props.addItem(newItem, this.props.flip);
+            this.setState(this.initialState);
+            this.props.toggleForm();
         } else {
             this.setState({error: true})
         }
