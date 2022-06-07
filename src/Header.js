@@ -34,7 +34,7 @@ const Header = (props) => {
     }
     return (
         <div class="header">
-            <div id="net-label">Net remaining: <span id="net-amt" class={colorClass}>{numToAmt(props.total)}</span></div>
+            <div id="net-label">Net per month: <span id="net-amt" class={colorClass}>{numToAmt(props.total)}</span></div>
             <DailyAmount total={props.total} colorClass={colorClass}/>
         </div>
     )
