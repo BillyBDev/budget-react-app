@@ -21,8 +21,8 @@ class App extends Component {
     window.localStorage.getItem('myState')
   ) || { total: 0, incomeItems: [], expenseItems: [] }
 
-  //used button instead
   //logic that persists app state all the time
+  // used save button instead
   // componentDidUpdate() {
   //   window.localStorage.setItem(
   //     'myState',
@@ -69,7 +69,6 @@ class App extends Component {
       }
   }
   
-
   render (){
     return (
       <ThemeProvider theme={theme}>
@@ -83,13 +82,9 @@ class App extends Component {
             addItem={this.addItem} 
             removeItem={this.removeItem}
            />
-
-
         </div>
         <Footer appState={this.state}/>
       </ThemeProvider>
-
-
     )
   }
 }
