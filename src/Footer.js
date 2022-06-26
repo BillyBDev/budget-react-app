@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
@@ -23,7 +24,7 @@ function Footer(props){
     const [lastTimeout, setLastTimeout] = useState("");
 
     return (
-        <div class="footer">
+        <div className="footer">
             <span id="save">
             {/* minimal icon version of save button */}
             {/* <IconButton size="small" aria-label="save">
@@ -54,11 +55,11 @@ function Footer(props){
                 <Fanfare showFanfare={showFanfare}/>
             </span>
             by Billy Brown III&nbsp;&nbsp;
-            <IconButton href="https://www.billybdev.com" target="_blank" size="small" aria-label="portfolio">
+            <IconButton href="https://www.billybrowniii.com" target="_blank" size="small" aria-label="portfolio">
                 <LanguageIcon />
             </IconButton>
             &nbsp;
-            <IconButton href="https://www.github.com/BillyBDev" target="_blank" size="small" aria-label="github">
+            <IconButton href="https://www.github.com/billybrown-iii" target="_blank" size="small" aria-label="github">
                 <GitHubIcon />
             </IconButton>
         </div>

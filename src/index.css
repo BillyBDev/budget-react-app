@@ -160,7 +160,8 @@ ul {
 .save-msg {
   font-size: 0.95em;
   position: absolute;
-  margin: -2.35em -12em 0 -6em;
+  width: 400px;
+  margin: -2.35em 0 0 -140px;;
   opacity: 1;
   -webkit-transition: opacity 2s;
   -moz-transition: opacity 2s;
